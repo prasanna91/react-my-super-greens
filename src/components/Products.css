@@ -1,0 +1,248 @@
+.products {
+  padding: 5rem 0;
+  background: var(--gray-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.products::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(131, 198, 95, 0.1) 0%, 
+    rgba(172, 105, 174, 0.1) 50%, 
+    rgba(250, 11, 140, 0.1) 100%);
+  z-index: 1;
+}
+
+.products .container {
+  position: relative;
+  z-index: 2;
+}
+
+.products-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.products.animate-in .products-header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.products.animate-in .products-grid {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--accent-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover::before {
+  transform: scaleX(1);
+}
+
+.product-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.product-hover-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, 
+    transparent 30%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-hover-effect {
+  transform: translateX(100%);
+}
+
+.product-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  animation: iconBounce 3s ease-in-out infinite;
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.1);
+  }
+}
+
+.product-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-dark);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.product-name::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.product-card:hover .product-name::after {
+  width: 50px;
+}
+
+.product-description {
+  color: var(--gray-medium);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.products-cta {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.products.animate-in .products-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn span {
+  position: relative;
+  z-index: 2;
+}
+
+.btn-hover-effect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover .btn-hover-effect {
+  left: 100%;
+}
+
+.btn-primary {
+  background: var(--primary-pink);
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(250, 11, 140, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(250, 11, 140, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .products {
+    padding: 3rem 0;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .product-card {
+    padding: 2rem;
+  }
+  
+  .product-icon {
+    font-size: 3rem;
+  }
+  
+  .product-name {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-card {
+    padding: 1.5rem;
+  }
+  
+  .product-icon {
+    font-size: 2.5rem;
+  }
+  
+  .product-name {
+    font-size: 1.2rem;
+  }
+} 

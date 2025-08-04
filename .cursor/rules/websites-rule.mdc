@@ -1,0 +1,75 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+website("https://www.2bfresh.com/our-microleaves") {
+  theme: "Clean, vibrant, plant-based, sustainable wellness"
+  layout: [
+    "Hero headline: 'Microgreens, MACRO Health!'",
+    "Top navigation menu (Home, Our Microgreens, About, Media, Contact, etc.)",
+    "Intro section with superfood benefits",
+    "'Our Microgreens' catalog grid (30+ varieties, each with image, name, description, nutrition, and culinary use)",
+    "Sustainability & commitment sections ('GREEN', 'COMMITTED')",
+    "Packaging & freshness assurance section",
+    "Footer with contact details, legal info, navigation"
+  ]
+  visuals: [
+    "High-resolution photos of microleaves in packs, bowls, and plated dishes",
+    "2BFresh main logo, MicroLeaves sub-brand logo, UN SDG badge"
+  ]
+  typography: {
+    headings: "Bold, all-caps, sans-serif",
+    subheadings: "Clean sans-serif, clear hierarchy",
+    productNames: "Semi-bold, smaller descriptive text"
+  }
+  colorPalette: [
+    "White background",
+    "Accent bright greens, reds, purples (reflecting microleaf colors)",
+    "Brand greens and neutrals for freshness and sustainability"
+  ]
+  content: {
+    intro: "Explains microleaves as superfoods: crunchy, flavorful, vitamin-dense",
+    tagline: "Microgreens, MACRO Health!",
+    catalog: [
+      { name: "Amaranth", color: "Magenta", flavor: "Mild beet", nutrition: ["C", "E", "K"], use: "Salads, garnish" },
+      { name: "Basil Green/Red", aroma: "Sweet basil", nutrition: ["A", "C", "K", "beta-caryophyllene"], use: "Italian dishes, salads" },
+      { name: "Beet Bulls Blood", texture: "Crunchy", nutrition: ["Fiber", "Folate", "Vitamins"], use: "Salads, color accent" },
+      { name: "Broccoli", flavor: "Mild", nutrition: ["A", "B", "C", "E", "K", "Minerals"], use: "Sandwiches, salads" },
+      // ... (other varieties: Coriander, Fenugreek, Japanese Mustard, Kale, Mizuna, Micro Mix, Mediterranean Mix, Wild Spring Mix, etc.)
+    ],
+    sustainability: {
+      green: [
+        "Soil-less greenhouse cultivation",
+        "No insects or soil contamination",
+        "Clean, cut packaging for food safety"
+      ],
+      committed: [
+        "Pesticide-free",
+        "No groundwater pollution",
+        "Low carbon footprint",
+        "Reduced packaging waste"
+      ]
+    },
+    packaging: [
+      "Cut and ready to use",
+      "Resealable clamshell containers",
+      "Fresh up to 10 days unopened"
+    ],
+    about: [
+      "2BFresh is part of Teshuva Agricultural Projects (TAP)",
+      "Advanced hydroponic and postharvest technology",
+      "Exports globally (Europe, Asia, USA)",
+      "Standardized harvest protocols for quality and freshness"
+    ],
+    footer: [
+      "Contact: Olesh, Israel HQ; Arava farm; Switzerland production",
+      "Privacy Policy: data via forms, Wix platform, data storage"
+    ]
+  }
+  highlights: [
+    "~30-40 microleaf types: single varieties and curated mixes",
+    "Nutritional benefits and usage ideas for each product",
+    "Sustainability credentials and global export"
+  ]
+}
